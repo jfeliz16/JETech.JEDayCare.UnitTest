@@ -8,13 +8,13 @@ namespace JETechSic.Core.UnitTest
 {
     public class Utility
     {
-        public static SicDbContext GetInMemorySicDbContext()
+        public static JEDayCareDbContext GetInMemorySicDbContext()
         {
-            var options = new DbContextOptionsBuilder<SicDbContext>()
+            var options = new DbContextOptionsBuilder<JEDayCareDbContext>()
             .UseInMemoryDatabase(Guid.NewGuid().ToString())
             .Options;
 
-            var context = new SicDbContext(options);
+            var context = new JEDayCareDbContext(options);
 
             var dataMockup = new DataMockup(context);
 

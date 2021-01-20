@@ -14,7 +14,7 @@ namespace JETech.JEDayCare.Core.UnitTest.Client
 {
     public class ClientService
     {
-        private readonly SicDbContext _dbContext;
+        private readonly JEDayCareDbContext _dbContext;
         private readonly IClientService _srvClient;
 
         public ClientService() {

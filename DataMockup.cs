@@ -9,9 +9,9 @@ namespace JETechSic.Core.UnitTest
 {
     public class DataMockup
     {
-        private readonly SicDbContext _sicDb;
+        private readonly JEDayCareDbContext _sicDb;
 
-        public DataMockup(SicDbContext sicDb) 
+        public DataMockup(JEDayCareDbContext sicDb) 
         {
             _sicDb = sicDb;
         }
