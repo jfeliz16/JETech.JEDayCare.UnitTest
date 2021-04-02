@@ -9,6 +9,7 @@ using JETech.JEDayCare.Core.Data.Entities;
 using JETech.NetCoreWeb.Types;
 using JETechSic.Core.UnitTest;
 using JETech.JEDayCare.Core.Clients.Interfaces;
+using JETech.JEDayCare.Core.Administration.Interfaces;
 
 namespace JETech.JEDayCare.Core.UnitTest.Client
 {
@@ -16,10 +17,12 @@ namespace JETech.JEDayCare.Core.UnitTest.Client
     {
         private readonly JEDayCareDbContext _dbContext;
         private readonly IClientService _srvClient;
+        private readonly IPersonService _srvPerson;
 
         public ClientService() {
             _dbContext = Utility.GetInMemorySicDbContext();
-            _srvClient = new JETech.JEDayCare.Core.Clients.Services.ClientService(_dbContext);
+            _srvPerson = new JEDayCare.Core.Administration.Services.PersonService(_dbContext);
+            _srvClient = new JETech.JEDayCare.Core.Clients.Services.ClientService(_dbContext, _srvPerson);
         }
 
         [Fact]
